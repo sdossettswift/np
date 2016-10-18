@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018225713) do
+ActiveRecord::Schema.define(version: 20161018230104) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "subtitle"
+    t.string   "publication"
+    t.date     "date"
+    t.string   "link"
+    t.text     "text"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -37,6 +48,14 @@ ActiveRecord::Schema.define(version: 20161018225713) do
     t.datetime "created_at"
     t.index ["namespace"], name: "index_refile_attachments_on_namespace", using: :btree
     t.index ["oid"], name: "index_refile_attachments_on_oid", using: :btree
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018230104) do
+ActiveRecord::Schema.define(version: 20161018231259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,48 @@ ActiveRecord::Schema.define(version: 20161018230104) do
     t.string   "amazon_link"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+  end
+
+  create_table "essays", force: :cascade do |t|
+    t.string   "title"
+    t.string   "publication"
+    t.integer  "year"
+    t.string   "publisher"
+    t.string   "book_author"
+    t.string   "link"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "lectures", force: :cascade do |t|
+    t.string   "title"
+    t.string   "institution"
+    t.date     "date"
+    t.string   "link"
+    t.text     "description"
+    t.integer  "year"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string   "url"
+    t.text     "caption"
+    t.string   "location"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text"
+    t.date     "date"
+    t.string   "author"
+    t.string   "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text     "content"
   end
 
   create_table "refile_attachments", force: :cascade do |t|

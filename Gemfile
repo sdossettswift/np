@@ -20,17 +20,11 @@ gem 'ckeditor', '~> 4.2.0' #blog editing
 gem 'rails_12factor' #for heroku
 gem 'pg_search' #postgres search
 
-# for refile #
-# gem 'refile'
-# gem 'refile-mini_magick'
-# gem 'refile-postgres'
-# gem 'sinatra'
-# gem 'rack-protection'
-
-gem 'refile', github: 'refile/refile', require: 'refile/rails'
-gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
-gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
-gem 'refile-postgres'
+#for refile
+  gem 'refile', github: 'refile/refile', require: 'refile/rails'
+  gem 'refile-mini_magick', github: 'refile/refile-mini_magick'
+  gem 'sinatra', github: 'sinatra/sinatra', branch: 'master'
+  gem 'refile-postgres'
 
 
 
